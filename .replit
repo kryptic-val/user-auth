@@ -12,3 +12,39 @@ channel = "stable-24_11"
 run = ["node", "index.js"]
 deploymentTarget = "autoscale"
 ignorePorts = false
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Setup"
+mode = "sequential"
+author = 42564573
+
+[[workflows.workflow.tasks]]
+task = "packager.installForLanguage"
+args = "nodejs"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm init"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm i express ejs"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm i --save-dev nodemon dotenv"
+
+[[workflows.workflow]]
+name = "Run"
+mode = "sequential"
+author = 42564573
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run devStart"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
