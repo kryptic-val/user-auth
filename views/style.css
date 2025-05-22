@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('https://cdn.jsdelivr.net/gh/kryptic-val/user-auth@2d97696d6f1e405477b714df442db822c85fbf6b/views/card-bg.jpg') no-repeat;
+    background: url("https://cdn.jsdelivr.net/gh/kryptic-val/user-auth@2d97696d6f1e405477b714df442db822c85fbf6b/views/card-bg.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 }
