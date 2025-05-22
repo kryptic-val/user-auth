@@ -45,6 +45,24 @@ author = 42564573
 task = "shell.exec"
 args = "npm run devStart"
 
+[[workflows.workflow]]
+name = "Bcrypt"
+mode = "sequential"
+author = 42564573
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm i bcrypt"
+
+[[workflows.workflow]]
+name = "Passport"
+mode = "sequential"
+author = 42564573
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm i passport passport-local express-session express-flash"
+
 [[ports]]
 localPort = 3000
 externalPort = 80
