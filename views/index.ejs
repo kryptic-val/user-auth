@@ -27,7 +27,10 @@
         
         <div class = "formBox login">
             <h2>Login</h2>
-            <form action = "#">
+            <form action = "login" method = "POST">
+                <% if (messages.error) { %>
+                    <strong><%= messages.error %></strong>
+                <% } %>
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>
@@ -59,7 +62,7 @@
         
         <div class = "formBox register">
             <h2>Registration</h2>
-            <form action = "/register" method = "POST">
+            <form action = "register" method = "POST">
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>
