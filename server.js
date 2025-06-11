@@ -12,7 +12,7 @@ const session = require('express-session')
 
 initializePassport(
   passport,
-  username => users.find(user => user.name === username),
+  name => users.find(user => user.name === name),
   id => users.find(user => user.id === id)
 )
 
@@ -29,8 +29,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.post("/login", passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/',
+  successRedirect: '/success',
+  failureRedirect: '/fail',
   failureFlash: true
 }))
 
