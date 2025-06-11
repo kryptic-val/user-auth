@@ -27,7 +27,7 @@
         
         <div class = "formBox login">
             <h2>Login</h2>
-            <form action = "login" method = "POST">
+            <form action = "/login" method = "POST">
                 <% if (messages.error) { %>
                     <strong><%= messages.error %></strong>
                 <% } %>
@@ -35,7 +35,7 @@
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input name = "loginusername" type = "text" required>
+                    <input name = "username" type = "text" required>
                     <label>Username</label>
                 </div>
                 
@@ -43,7 +43,7 @@
                     <span class = "icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input name = "loginpassword" type = "password" required>
+                    <input name = "password" type = "password" required>
                     <label>Password</label>
                 </div>
                 
@@ -62,7 +62,7 @@
         
         <div class = "formBox register">
             <h2>Registration</h2>
-            <form action = "register" method = "POST">
+            <form action = "/register" method = "POST">
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>

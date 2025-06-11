@@ -29,8 +29,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.post("/login", passport.authenticate('local', {
-  successRedirect: '/success',
-  failureRedirect: '/fail',
+  successRedirect: '/games',
+  failureRedirect: '/',
   failureFlash: true
 }))
 
@@ -53,6 +53,10 @@ app.post("/register", async(req, res) => {
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
+})
+
+app.get('/games', (req, res) => {
+  res.render('games.ejs');
 })
 
 console.log(users);
