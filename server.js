@@ -36,6 +36,11 @@ app.post("/login", passport.authenticate('local', {
 
 app.post("/register", async(req, res) => {
   try {
+    const existingUser = users.find(user => user.name === req.body.registerusername)
+    if (existingUser) {
+      req.flash('error', 'Username is already taken')
+      return res.redirect('/')
+    }
     const hashedPassword = await bcrypt.hash(req.body.registerpassword, 10)
     users.push({
       id: Date.now().toString(),
@@ -52,7 +57,7 @@ app.post("/register", async(req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index.ejs', { messages: req.flash() });
 })
 
 app.get('/games', (req, res) => {

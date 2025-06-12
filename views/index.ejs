@@ -27,10 +27,12 @@
         
         <div class = "formBox login">
             <h2>Login</h2>
+            <% if (messages.error) { %>
+                <div style="color: red; text-align: center; margin-bottom: 15px;">
+                    <%= messages.error %>
+                </div>
+            <% } %>
             <form action = "/login" method = "POST">
-                <% if (messages.error) { %>
-                    <strong><%= messages.error %></strong>
-                <% } %>
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>
@@ -62,10 +64,12 @@
         
         <div class = "formBox register">
             <h2>Registration</h2>
+            <% if (messages.error) { %>
+                <div style="color: red; text-align: center; margin-bottom: 15px;">
+                    <%= messages.error %>
+                </div>
+            <% } %>
             <form action = "/register" method = "POST">
-                <% if (messages.error) { %>
-                    <strong><%= messages.error %></strong>
-                <% } %>
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>
