@@ -6,16 +6,15 @@
     <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     
-    <title>Website</title>
+    <title>Home</title>
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/kryptic-val/user-auth@060e87a0f2c13ab60ef3ac59e1e70bf56efa6912/views/style.css">
 </head>
 
 <body>
     <header>
-        <h2 class = "logo">Website</h2>
+        <h2 class = "logo">Home</h2>
         
         <nav class = "navigation">
-            <a href = "#">Home</a>
             <button class = "loginBtn">Login</button>
         </nav>
     </header>
@@ -27,12 +26,12 @@
         
         <div class = "formBox login">
             <h2>Login</h2>
-            <% if (messages.error) { %>
-                <div style="color: red; text-align: center; margin-bottom: 15px;">
-                    <%= messages.error %>
-                </div>
-            <% } %>
             <form action = "/login" method = "POST">
+                <% if (messages.error) { %>
+                    <div style="color: red; text-align: center; margin-bottom: 15px;">
+                        <%= messages.error %>
+                    </div>
+                <% } %>
                 <div class = "inputBox">
                     <span class = "icon">
                         <ion-icon name="person"></ion-icon>

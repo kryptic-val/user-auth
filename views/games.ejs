@@ -6,98 +6,20 @@
     <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 
-    <title>Website</title>
+    <title> Games </title>
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/kryptic-val/user-auth@060e87a0f2c13ab60ef3ac59e1e70bf56efa6912/views/style.css">
 </head>
 
 <body>
     <header>
-        <h2 class = "logo">Website</h2>
+        <h2 class = "logo"> Games </h2>
 
         <nav class = "navigation">
-            <a href = "#">Home</a>
-            <button class = "loginBtn">Login</button>
+            <form action = "/logout?_method=DELETE" method = "POST">
+                <button type = "submit" class = "loginBtn">Logout</button>
+            </form>
         </nav>
     </header>
-
-    <div class = "wrapper">
-        <span class = "close">
-            <ion-icon name="close"></ion-icon>
-        </span>
-
-        <div class = "formBox login">
-            <h2>Login</h2>
-            <form action = "/login" method = "POST">
-                <% if (messages.error) { %>
-                    <strong><%= messages.error %></strong>
-                <% } %>
-                <div class = "inputBox">
-                    <span class = "icon">
-                        <ion-icon name="person"></ion-icon>
-                    </span>
-                    <input name = "username" type = "text" required>
-                    <label>Username</label>
-                </div>
-
-                <div class = "inputBox">
-                    <span class = "icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input name = "password" type = "password" required>
-                    <label>Password</label>
-                </div>
-
-                <div class = "remember-forgot">
-                    <label><input type = "checkbox"> Remember me</label>
-                    <a href = "#">Forgot Password?</a>
-                </div>
-
-                <button type = "submit" class = "btn">Login</button>
-
-                <div class = "login-register">
-                    <p>Don't have an account? <a href = "#" class = "registerLink">Register</a></p>
-                </div>
-            </form>
-        </div>
-
-        <div class = "formBox register">
-            <h2>Registration</h2>
-            <form action = "/register" method = "POST">
-                <% if (messages.error) { %>
-                    <strong><%= messages.error %></strong>
-                <% } %>
-                <div class = "inputBox">
-                    <span class = "icon">
-                        <ion-icon name="person"></ion-icon>
-                    </span>
-                    <input name = "registerusername" type = "text" required>
-                    <label>Username</label>
-                </div>
-
-                <div class = "inputBox">
-                    <span class = "icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input name = "registeremail" type = "email" required>
-                    <label>Email</label>
-                </div>
-
-                <div class = "inputBox">
-                    <span class = "icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input name = "registerpassword" type = "password" required>
-                    <label>Password</label>
-                </div>
-
-                <button type = "submit" class = "btn">Register</button>
-
-                <div class = "login-register">
-                    <p>Already have an account? <a href = "#" class = "loginLink">Login</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script src = "https://cdn.jsdelivr.net/gh/kryptic-val/user-auth@740b4b1bdc0ada8728880b1d9b509928ffd7462b/views/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
